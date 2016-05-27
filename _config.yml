@@ -23,14 +23,13 @@ image:            /public/img/nap.jpg
 color:            '#A85641'
 
 author:
-  name:           'Florian Klampfer'
+  name:           'Tracy Guo'
 
   # Setting social media usernames will add icons at the bottom of the sidebar
-  twitter:        qwtel
-  github:         qwtel
+  github:         xiaowoniu22
 
   # Setting a disqus username will enable the comment section
-  disqus:         qwtel
+  disqus:
 
   # This photo will be used in the about section
   photo:          http://qwtel.com/public/img/flo.jpg
