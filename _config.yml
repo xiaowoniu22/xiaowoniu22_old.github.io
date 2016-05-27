@@ -2,12 +2,12 @@
 permalink:        pretty
 
 # Setup
-url:              http://qwtel.com
+url:http://xiaowoniu22.github.io
 
 # Set to '' in case of hosting on `http://<your-github-name>.github.io`
-baseurl:          /hydejack
-
-title:            Hydejack
+baseurl:
+title:  Tracy Guo'blog
+email: guoxiaoting949@163.com
 
 # Markdown enabled, however don't use more than one paragraph (enforced by `>`)
 description:      >
