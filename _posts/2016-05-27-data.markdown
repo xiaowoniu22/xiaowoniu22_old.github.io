@@ -1,7 +1,0 @@
----
-layout: post
-title:  "data-属性的获取方式探讨"
-date:   2016-05-27 11:12:07 +0800
-categories: jekyll update
----
-最近在使用data()方法是遇到一些问题
