@@ -2,10 +2,10 @@
 permalink:        pretty
 
 # Setup
-url:http://xiaowoniu22.github.io
+url: http://xiaowoniu22.github.io
 
 # Set to '' in case of hosting on `http://<your-github-name>.github.io`
-baseurl:http://xiaowoniu22.github.io
+baseurl: http://xiaowoniu22.github.io
 title:  Tracy Guo'blog
 email: guoxiaoting949@163.com
 
