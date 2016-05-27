@@ -1,6 +1,6 @@
-# Hydejack
+# xiaowoniu22.github.io
 
-Hydejack is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [hydejacked](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
+xiaowoniu22.github.io is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [xiaowoniu22.github.ioed](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
 
 ## Features
 Unlike Hyde, it's opinionated about how you are going to use it (as a blog!)
@@ -17,7 +17,7 @@ Features included are:
 
 ## Download
 
-Hydejack is developed on and hosted with GitHub. Head to the [GitHub repository](https://github.com/qwtel/hydejack) for downloads, bug reports, and feature requests.
+xiaowoniu22.github.io is developed on and hosted with GitHub. Head to the [GitHub repository](https://github.com/qwtel/xiaowoniu22.github.io) for downloads, bug reports, and feature requests.
 
 ## Sidebar
 I love the original Hyde theme, but unfortunately the layout isn't as great on small screens.
@@ -30,7 +30,7 @@ Since the background image contributes to the feel of the page I'm letting it pe
 ## Manual
 
 ### Configuration
-You can configure important aspects of the theme via [`_config.yml`](https://github.com/qwtel/hydejack/blob/master/_config.yml). This includes:
+You can configure important aspects of the theme via [`_config.yml`](https://github.com/qwtel/xiaowoniu22.github.io/blob/master/_config.yml). This includes:
 
 * the blog description in the sidebar
 * the (optional) author description and photo
@@ -42,8 +42,8 @@ In the manifest of a blog post, simply add an url as `image` and a CSS color as 
 
 ~~~yml
 layout: post
-title: Introducing Hydejack
-image: http://qwtel.com/hydejack/public/img/hyde.jpg
+title: Introducing xiaowoniu22.github.io
+image: http://qwtel.com/xiaowoniu22.github.io/public/img/hyde.jpg
 color: '#949667'
 ~~~
 
