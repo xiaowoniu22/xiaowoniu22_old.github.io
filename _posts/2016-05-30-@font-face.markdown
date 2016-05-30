@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "关于@font-face的使用"
-date:   2016-05-27 11:12:07 +0800
+date:   2016-05-30 17:55:07 +0800
 categories: jekyll update
 ---
 http://www.w3cplus.com/content/css3-font-face
