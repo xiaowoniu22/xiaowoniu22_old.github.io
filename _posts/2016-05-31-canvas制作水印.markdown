@@ -7,4 +7,6 @@ categories: jekyll update
 项目开发中目前遇到的水印有三种情况：单独的文字显示，背景透明的图片作为水印，内容变化的斜体重复水印。
 对于前两种情况，只需要通过
 [image]
-[image]: /public/img/水平.png
+
+
+[image]: http://jekyllrb.com/docs/home
