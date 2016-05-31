@@ -11,7 +11,11 @@ post:
 对于前两种情况，只需要通过
 ![image01]
 ![image02]
+![image03]
+![image04]
 
 
 [image01]:/public/img/水平.png
 [image02]:/public/img/transform.png
+[image03]:/public/img/3.png
+[image04]:/public/img/4.png
