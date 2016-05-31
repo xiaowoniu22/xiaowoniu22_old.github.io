@@ -50,7 +50,10 @@ layout: default
   <ul class="related-posts">
     {% assign plusone = false %}
     {% assign tag_name = page.tags[0] %}
+    <li>{{tag_name}}</li>
+    <li>{{post}}</li>
     {% for post in site.tags[tag_name] limit:4 %}
+
       {% if post.url == page.url %}
         {% assign plusone = true %}
         {% continue %}

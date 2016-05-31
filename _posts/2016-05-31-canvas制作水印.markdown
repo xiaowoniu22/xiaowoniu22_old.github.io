@@ -3,7 +3,7 @@ layout: post
 title:  "canvas制作水印"
 date:   2016-05-31 14:08:07 +0800
 categories: jekyll update
-post:
+tags:
   url: http://fe.iwjw.com/yong/
   title: "canvas实现平铺水印"
 ---
