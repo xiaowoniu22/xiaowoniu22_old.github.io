@@ -3,7 +3,7 @@ layout: post
 title:  "canvas制作水印"
 date:   2016-05-31 14:08:07 +0800
 categories: jekyll update
-
+tags: [canvas]
 ---
 项目开发中目前遇到的水印有三种情况：单独的文字显示，背景透明的图片作为水印，内容变化的斜体重复水印。
 对于前两种情况，只需要通过
