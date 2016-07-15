@@ -31,7 +31,8 @@ tags: [在线视频播放]
 然而，我想说的是，我在调用window media player时还是遇到了问题：
 1、除了IE浏览器（此刻我们把国产的有兼容模式的浏览器当做IE浏览器使用），chrome和firefox浏览器都需要安装插件
 好的，那我们来安装插件，firefox的[安装方法]，如此这般，你可以在firefox调用wmp了。
-然而，[chrome的插件]官网已经不再提供了
+然而，chrome的插件官网已经不再提供了
+![chrome的插件]
 
 
 
