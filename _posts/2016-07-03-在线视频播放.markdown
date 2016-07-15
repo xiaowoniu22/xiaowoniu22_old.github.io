@@ -1,11 +1,40 @@
 ---
 layout: post
-title:  "jQuery.form.js插件使用说明"
-date:   2016-07-01 14:08:07 +0800
+title:  在线视频播放
+date:   2016-07-03 14:08:07 +0800
 categories: jekyll update
-tags: [form上传]
+tags: [在线视频播放]
 ---
+前端实现在线视频的方式目前比较多的是h5或者通过浏览器调用本地播放器。
+这篇博客的背景
+1、windows7系统
+2、尽可能多的支持各种格式的音频，视频播放。例如以下视频格式：mp4、flv、ts、mpg、wmv、av、rmvb、mkv、mov，音频文件格式：mp3、wav、aac、ogg。
+万恶的尽可能多
+所以，我采用了调用本地windows media player播放器，用户通过解码器来扩展格式。
+调用windows media player的方法是这样的
+{% highlight ruby %}
+<object id="MediaPlayer" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" width="800" height="600" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
+    <param name="FileName" value="test.avi">
+    <param name="AutoStart" value="true">
+    <param name="ShowControls" value="true">
+    <param name="BufferingTime" value="2">
+    <param name="ShowStatusBar" value="true">
+    <param name="AutoSize" value="true">
+    <param name="InvokeURLs" value="false">
+    <param name="AnimationatStart" value="1">
+    <param name="TransparentatStart" value="1">
+    <param name="Loop" value="1">
+    <embed type="application/x-mplayer2" src="test.avi" name="MediaPlayer" autostart="1" showstatusbar="1" showdisplay="1" showcontrols="1" loop="0" videoborder3d="0" pluginspage="http://www.microsoft.com/Windows/MediaPlayer/" width="800" height="600"></embed>
+</object>
+{% endhighlight %}
+
+然而，我想说的是，我在调用window media player时还是遇到了问题：
+1、除了IE浏览器（此刻我们把国产的有兼容模式的浏览器当做IE浏览器使用），chrome和firefox浏览器都需要安装插件
+好的，那我们来安装插件，firefox的[安装方法]，如此这般，你可以在firefox调用wmp了。
+然而，pchrome的插件]官网已经不再提供了
 
 
 
-http://www.oschina.net/question/1379263_128423
+
+[安装方法]:https://support.mozilla.org/zh-CN/kb/%E5%9C%A8%20Firefox%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Windows%20Media%20Player%20%E6%8F%92%E4%BB%B6#w_goceacki
+[chrome的插件]:http://7xuyc3.com1.z0.glb.clouddn.com/chrome%E6%8F%92%E4%BB%B6%E5%AE%98%E7%BD%91.png
