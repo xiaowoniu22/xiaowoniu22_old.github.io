@@ -5,7 +5,8 @@ date:   2016-07-18 14:08:07 +0800
 categories: jekyll update
 tags: [读书笔记]
 ---
-改善javascript程序的188个建议
+改善javascript程序的188个建议：
+
 1、警惕Unicode乱码
 考虑到代码的安全性，我们应该尽量使用基本字符进行编码
 2、正确辨析js语法中的词、句和段
