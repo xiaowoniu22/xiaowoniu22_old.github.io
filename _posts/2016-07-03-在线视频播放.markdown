@@ -33,7 +33,8 @@ tags: [在线视频播放]
 好的，那我们来安装插件，firefox的[安装方法]，如此这般，你可以在firefox调用wmp了。
 然而，chrome的插件官网已经不再提供了
 ![chrome的插件]
-
+我用之前下载的插件在chrome也无法成功调用wmp了。
+2、最后，还有一个问题，我通过js动态修改<param name="FileName" value="test.avi">的value和<embed>标签的src会导致IE无法调用wmp
 
 
 
