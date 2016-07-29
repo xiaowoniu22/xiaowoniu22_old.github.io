@@ -1,8 +1,15 @@
 ---
 layout: post
-title:  "animate怎样支持background-color"
+title:  "每周一点html5——sendMessage和postMessage"
 date:   2016-05-31 14:08:07 +0800
 categories: jekyll update
-tags: [canvas]
+tags: [html5][跨域]
 ---
-jQuery的animate方法是不支持背景颜色background-color的动态变化的，这个问题可以通过引用jQuery-UI.js来解决。当然你最好通过jquery.animate-colors-min.js这个插件或者只引用你需要的jquery-ui中你需要的部分。注意，保持jQuery和jQuery-ui的版本一致。
+
+1.页面和其打开的新窗口的数据传递
+
+2.多窗口之间消息传递
+
+3.页面与嵌套的iframe消息传递
+
+4.上面三个问题的跨域数据传递
