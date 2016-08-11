@@ -6,12 +6,20 @@ categories: jekyll update
 tags: [前端网站汇总]
 ---
 我常关注的前端网站  
-1、[淘宝前端团队]  
-2、[稀土掘金]  
+1、[前端网址导航]
+2、[淘宝前端团队]  
+3、[稀土掘金]  
+4、awesomes前端资源库（包含活跃度排名）  
+5、[javascript中文网]（电子书分区包含丰富的前端电子书）  
+6、[慕课网]（视频）
+7、[three.js]  
 
-
-
+[前端网址导航]: http://www.daqianduan.com/nav
 [淘宝前端团队]: http://taobaofed.org/
 [稀土掘金]:http://gold.xitu.io/search/canvas
+[awesomes]:https://www.awesomes.cn/
+[javascript中文网]:http://www.javascriptcn.com/thread-2.html
+[慕课网]:http://www.imooc.com/
+[three.js]: http://threejs.org/
 
 
