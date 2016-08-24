@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "实现国际化的几种方式"
+date:   2016-08-24 14:08:07 +0800
+categories: jekyll update
+tags: [国际化]
+---
+实现国际化的方式
+国际化internationalization缩写为i18n，即网站的语言切换
+实现方法如下 
+
+
+
+
