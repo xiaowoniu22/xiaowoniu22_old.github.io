@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "每天一句linux命令"
+date:   2016-09-19 14:08:07 +0800
+categories: jekyll update
+tags: [linux]
+---
+每天一句linux命令
+1、重命名文件或文件夹 mv  
+mv a b  
+将目录a重命名为b   
+mv /a /b/c   
+将目录/a移动到/b下并重命名为c   
+2、从服务器下载文件 get  
+从远程ftp服务器下载文件  
+get  远程ftp服务器上当前目录下要下载的文件名  [下载到本地机器上当前目录时的文件名]，如：   
+get  nmap_file  [nmap]
+
+3、2、向远程ftp服务器上传文件的命令格式：  
+
+put  本地机器上当前目录下要上传的文件名  [上传到远程ftp服务器上当前目录时的文件名]，如：  
+
+put  sample.c  [ftp_sample.c]  
+
+意思是把本地机器当前目录下的文件smaple.c上传到远程ftp服务器的当前目录下，名称更改为ftp_sample.c。  
+
+带括号表示可写可不写，不写的话是以该文件名上传   
+
+
+
+
