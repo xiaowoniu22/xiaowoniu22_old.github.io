@@ -67,11 +67,12 @@ new SWFUpload({
 	file_types: "*.*",
 	file_types_description: "All files",
 	...
+})
 {% endhighlight %}
-3、文件上传（采用客户端上传插件的方式）
+3、文件上传（采用客户端上传插件的方式）  
 	但是，swfupload不能实现断点续传，分片上传，文件夹上传等，我们通过插件实现了以上swfupload不能实现的功能。浏览器插件时c++同学写的。我在这里只说一下前端如何获取浏览器插件基本信息以及判断插件是否加载成功。  
 	因为navigator.plugins只在非ie中生效，但ActiveX在ie中并不好用，因为你需要知道每个插件的唯一标识符，尤其是对于自己开发的插件。所以此处生成obj检查是否包含版本信息来确认。
-	{% highlight ruby %} 
+{% highlight ruby %} 
 	var testUploadPluginDom = jQuery('<object id="testPluginDom" type="application/x-plugin" width="0" height="0"></object>');
     jQuery("body").append(testPluginDom);
 	var pluginVersion = document.getElementById('testPluginDom').version;
@@ -82,9 +83,10 @@ new SWFUpload({
 		//console.log("client plugin is not load....");
 		result = false;
 	}
-	{% endhighlight %}
+{% endhighlight %}
 	其中object标签的type属性值为插件的mime类型
 4、文件上传（采用webuploader.js插件上传，够快网盘）
+	
 5、移动端webapp文件上传（移动端使用webuploader.js有什么问题）
 
 
