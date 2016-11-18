@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "上传实现"
+date:   2016-11-17 14:08:07 +0800
+categories: jekyll update
+tags: [h5]
+---
+项目中涉及到的上传  
+项目中涉及到需要上传文件的需求很多，简单的有上传用户头像，复杂一些的有文件管理系统中的文件上传，可以做到断点续传，分片上传，大文件上传，上传文件夹等功能。  
+1、用户头像上传或证书上传（form+iframe）  
+	首先来说说头像上传，几乎所有需要用户登录的网站都需要支持用户上传头像。我做的项目需要兼容低级浏览器，所以通过form+iframe这种简单的方式来实现。
+{% highlight ruby %}
+<form name="uploadFigure" target="asyncUpload" action="/avatar/upload/" method="post" enctype="multipart/form-data">>
+	<input class="upload" name="avatar" type="file">
+</form>
+<iframe name="asyncUpload" src="proxy.html" style="display:none"></iframe>
+{% endhighlight %}
+	接着，我需要获取接口的返回值进行下一步操作。  
+{% highlight ruby %}
+$('iframe').on('load', function() {
+    var responseText = $('iframe')[0].contentDocument.body.textContent;
+    var responseData = JSON.parse(responseText) || {};
+    if (responseData.isSuccess == true || responseData.code == 200) {
+        //success
+    } else {
+        //error   
+    }
+});	
+{% endhighlight %}  
+	或者  
+{% highlight ruby %}
+$('iframe').on('load', function() {
+	var frame = frames[’asyncUpload‘];
+	var res = JSON.decode(frame.document.body.innerHTML);
+	if(res) {
+		if(res.code == 0) {
+			//success
+		}
+		else 
+			//error
+		}
+	}				
+});	
+{% endhighlight %} 
+2、文件管理系统中文件的上传（采用flash上传）  
+3、文件管理系统中文件的上传（采用客户端上传插件的方式）
+4、文件管理系统中文件的上传（采用webuploader.js插件上传，够快网盘）
+5、移动端webapp文件上传（移动端使用webuploader.js有什么问题）
+
+
+<form name="uploadFigure" target="asyncUpload_ivm4xnpg" action="/avatar/upload/" method="post" enctype="multipart/form-data">
+								<input value="+ 选择图片" class="upload-btn" type="button">
+								<input class="upload-ctrl" name="avatar" type="file">
+							</form>
+
+
