@@ -43,7 +43,7 @@ $('iframe').on('load', function() {
 });	
 {% endhighlight %} 
 2、文件上传（采用flash上传）  
-	项目最早使用的是SWFUpload上传，SWFUpload是一个客户端文件上传工具，它通过整合Flash与JavaScript技术为WEB开发者提供了一个具有丰富功能继而超越传统<input type="file" />标签的文件上传模式。
+	项目最早使用的是SWFUpload上传，SWFUpload是一个客户端文件上传工具，它通过整合Flash与JavaScript技术为WEB开发者提供了一个具有丰富功能继而超越传统“<input type="file" />”标签的文件上传模式。
 	SWFUpload有以下特点		
 	* 可以同时上传多个文件；  
 	* 类似AJAX的无刷新上传；  
