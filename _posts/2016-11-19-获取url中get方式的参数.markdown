@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "获取url参数"
+date:   2016-10-24 14:08:07 +0800
+categories: jekyll update
+tags: [h5]
+---
+获取url参数    
+我在这里列举两种方式，一种是自己写的截取字符串的方式，一种是网上的正则表达式的方式  
+一、字符串截取方式
+{% heightlight ruby %}
+function paramOfUrl(url) {
+	url = url || location.href;
+	var paramSuit = url.substring(url.indexOf('?') + 1).split("&");
+	var paramObj = {};
+	for (var i = 0; i < paramSuit.length; i++) {
+		var param = paramSuit[i].split('=');
+		if (param.length == 2) {
+			var key = decodeURIComponent(param[0]);
+			var val = decodeURIComponent(param[1]);
+			if (paramObj.hasOwnProperty(key)) {
+				paramObj[key] = jQuery.makeArray(paramObj[key]);
+				paramObj[key].push(val);
+			} else {
+				paramObj[key] = val;
+			}
+		}
+	}
+	return paramObj;
+}
+{% endheightlight %}
+
+
+
+

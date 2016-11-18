@@ -69,8 +69,8 @@ new SWFUpload({
 	...
 })
 {% endhighlight %}
-3、文件上传（采用客户端上传插件的方式）  
-	但是，swfupload不能实现断点续传，分片上传，文件夹上传等，我们通过插件实现了以上swfupload不能实现的功能。浏览器插件时c++同学写的。我在这里只说一下前端如何获取浏览器插件基本信息以及判断插件是否加载成功。  
+3、文件上传（采用客户端上传插件的方式）    
+	但是，swfupload不能实现断点续传，分片上传，文件夹上传等，我们通过插件实现了以上swfupload不能实现的功能。浏览器插件时c++同学写的。我在这里只说一下前端如何获取浏览器插件基本信息以及判断插件是否加载成功。   
 	因为navigator.plugins只在非ie中生效，但ActiveX在ie中并不好用，因为你需要知道每个插件的唯一标识符，尤其是对于自己开发的插件。所以此处生成obj检查是否包含版本信息来确认。
 {% highlight ruby %} 
 	var testUploadPluginDom = jQuery('<object id="testPluginDom" type="application/x-plugin" width="0" height="0"></object>');
@@ -83,11 +83,22 @@ new SWFUpload({
 		//console.log("client plugin is not load....");
 		result = false;
 	}
-{% endhighlight %}
-	其中object标签的type属性值为插件的mime类型
-4、文件上传（采用webuploader.js插件上传，够快网盘）
-	
+{% endhighlight %}  
+其中object标签的type属性值为插件的mime类型    
+4、文件上传（采用webuploader.js插件上传）
+	然后就是使用很广泛的FEX的webuploader.js了，可以实现上传进度、断点续传、分片上传，高级浏览器使用h5上传，低版本依然采用flash上传。  
+	用法我就不必多说，请看[官方文档]。  
 5、移动端webapp文件上传（移动端使用webuploader.js有什么问题）
+	移动端用起来的问题还是挺多的。
+	1、ios9.2（猜测10以下）上传的图片无法获取文件名，被自动命名为image；   
+	2、ios上，如果支持多图片上传测不支持视频上传；   
+	3.android上，不支持多文件上传。在图片和视频文件夹中不可上传视频。    
+另外，可见[移动端注意事项]。
+
+
+
+[官方文档]: http://fex.baidu.com/webuploader/getting-started.html
+[移动端注意事项]https://github.com/fex-team/webuploader/issues/185
 
 
 
