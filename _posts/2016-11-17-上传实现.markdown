@@ -10,7 +10,7 @@ tags: [h5]
 1、用户头像上传或证书上传（form+iframe）  
 	首先来说说头像上传，几乎所有需要用户登录的网站都需要支持用户上传头像。我做的项目需要兼容低级浏览器，所以通过form+iframe这种简单的方式来实现。
 {% highlight ruby %}
-<form name="uploadFigure" target="asyncUpload" action="/avatar/upload/" method="post" enctype="multipart/form-data">>
+<form name="uploadFigure" target="asyncUpload" action="/avatar/upload/" method="post" enctype="multipart/form-data">
 	<input class="upload" name="avatar" type="file">
 </form>
 <iframe name="asyncUpload" src="proxy.html" style="display:none"></iframe>
@@ -18,9 +18,9 @@ tags: [h5]
 	接着，我需要获取接口的返回值进行下一步操作。  
 {% highlight ruby %}
 $('iframe').on('load', function() {
-    var responseText = $('iframe')[0].contentDocument.body.textContent;
-    var responseData = JSON.parse(responseText) || {};
-    if (responseData.isSuccess == true || responseData.code == 200) {
+    var resText = $('iframe')[0].contentDocument.body.textContent;
+    var res = JSON.parse(responseText) || {};
+    if (res.code == 0) {
         //success
     } else {
         //error   
@@ -30,7 +30,7 @@ $('iframe').on('load', function() {
 	或者  
 {% highlight ruby %}
 $('iframe').on('load', function() {
-	var frame = frames[’asyncUpload‘];
+	var frame = frames['asyncUpload'];
 	var res = JSON.decode(frame.document.body.innerHTML);
 	if(res) {
 		if(res.code == 0) {
@@ -42,15 +42,50 @@ $('iframe').on('load', function() {
 	}				
 });	
 {% endhighlight %} 
-2、文件管理系统中文件的上传（采用flash上传）  
-3、文件管理系统中文件的上传（采用客户端上传插件的方式）
-4、文件管理系统中文件的上传（采用webuploader.js插件上传，够快网盘）
+2、文件上传（采用flash上传）  
+	项目最早使用的是SWFUpload上传，SWFUpload是一个客户端文件上传工具，它通过整合Flash与JavaScript技术为WEB开发者提供了一个具有丰富功能继而超越传统<input type="file" />标签的文件上传模式。
+	SWFUpload有以下特点		
+	* 可以同时上传多个文件；  
+	* 类似AJAX的无刷新上传；  
+	* 可以显示上传进度；  
+	* 良好的浏览器兼容性；  
+	* 兼容其他JavaScript库 (例如：jQuery, Prototype等)；  
+	* 支持Flash 8和Flash 9。
+	配制方法：
+	需要要引用swfUpload.js
+{% highlight ruby %}
+<script type="text/javascript" src="http://www.swfupload.org/swfupload.js"></script>
+{% endhighlight %}
+然后初始化
+{% highlight ruby %} 
+new SWFUpload({
+	upload_url: url,
+	flash_url: 'EmacleUploader.swf',
+	assume_success_timeout: '10000',
+	file_size_limit: 300 * 1024,
+	file_queue_limit: 50,
+	file_types: "*.*",
+	file_types_description: "All files",
+	...
+{% endhighlight %}
+3、文件上传（采用客户端上传插件的方式）
+	但是，swfupload不能实现断点续传，分片上传，文件夹上传等，我们通过插件实现了以上swfupload不能实现的功能。浏览器插件时c++同学写的。我在这里只说一下前端如何获取浏览器插件基本信息以及判断插件是否加载成功。  
+	因为navigator.plugins只在非ie中生效，但ActiveX在ie中并不好用，因为你需要知道每个插件的唯一标识符，尤其是对于自己开发的插件。所以此处生成obj检查是否包含版本信息来确认。
+	{% highlight ruby %} 
+	var testUploadPluginDom = jQuery('<object id="testPluginDom" type="application/x-plugin" width="0" height="0"></object>');
+    jQuery("body").append(testPluginDom);
+	var pluginVersion = document.getElementById('testPluginDom').version;
+	if (pluginVersion) {
+		//console.log("version: " + pluginVersion);
+		result = true;
+	} else {
+		//console.log("client plugin is not load....");
+		result = false;
+	}
+	{% endhighlight %}
+	其中object标签的type属性值为插件的mime类型
+4、文件上传（采用webuploader.js插件上传，够快网盘）
 5、移动端webapp文件上传（移动端使用webuploader.js有什么问题）
 
-
-<form name="uploadFigure" target="asyncUpload_ivm4xnpg" action="/avatar/upload/" method="post" enctype="multipart/form-data">
-								<input value="+ 选择图片" class="upload-btn" type="button">
-								<input class="upload-ctrl" name="avatar" type="file">
-							</form>
 
 
