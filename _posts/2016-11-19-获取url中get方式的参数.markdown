@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "获取url参数"
-date:   2016-10-24 14:08:07 +0800
+date:   2016-11-19 14:08:07 +0800
 categories: jekyll update
 tags: [h5]
 ---
@@ -29,6 +29,13 @@ function paramOfUrl(url) {
 	return paramObj;
 }
 {% endheightlight %}
+
+二、正则表达式方式
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return decodeURIComponent(r[2]);return null;
+}
 
 
 
