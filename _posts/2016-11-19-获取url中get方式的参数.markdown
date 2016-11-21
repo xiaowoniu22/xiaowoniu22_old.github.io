@@ -30,12 +30,14 @@ function paramOfUrl(url) {
 }
 {% endhighlight %}
 
-二、正则表达式方式
+二、正则表达式方式    
+{% highlight ruby %}
 function getQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	var r = window.location.search.substr(1).match(reg);
 	if (r != null) return decodeURIComponent(r[2]);return null;
 }
+{% endhighlight %}
 
 
 
