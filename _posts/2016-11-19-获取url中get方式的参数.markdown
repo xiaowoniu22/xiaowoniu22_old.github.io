@@ -8,7 +8,7 @@ tags: [h5]
 获取url参数    
 我在这里列举两种方式，一种是自己写的截取字符串的方式，一种是网上的正则表达式的方式  
 一、字符串截取方式
-{% heightlight ruby %}
+{% heighlight ruby %}
 function paramOfUrl(url) {
 	url = url || location.href;
 	var paramSuit = url.substring(url.indexOf('?') + 1).split("&");
@@ -28,7 +28,7 @@ function paramOfUrl(url) {
 	}
 	return paramObj;
 }
-{% endheightlight %}
+{% endheighlight %}
 
 二、正则表达式方式
 function getQueryString(name) {
