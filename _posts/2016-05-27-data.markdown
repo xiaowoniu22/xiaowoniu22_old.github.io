@@ -4,4 +4,37 @@ title:  "data-属性的获取方式探讨"
 date:   2016-05-27 11:12:07 +0800
 categories: jekyll update
 ---
-最近在使用data()方法是遇到一些问题
+	最近在使用data-*方法时遇到一些问题。    
+	data-*属性是html5中的自定义属性，如果想通过js获取或设置自定义data属性，可以通过dataset对象。
+{% hightlight ruby %}
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  document.getElementById("btn1").onclick=function(){
+    document.getElementsByTagName("div")[0].dataset.gree = "0123456789";
+  };
+  document.getElementById("btn2").onclick=function(){
+	  alert(document.getElementsByTagName("div")[0].dataset.gree);
+  };
+});
+</script>
+</head>
+<body>
+<button id="btn1">把数据添加到 div 元素</button><br />
+<button id="btn2">获取已添加到 div 元素的数据</button>
+<div data-gree="0123456"></div>
+</body>
+</html>
+{% endhightlight %}
+因为dataset的自定义特性值必须为String类型，赋予其他类型时会发生隐式类型转换，不便于暂存对象、数组等数据。
+这样是没有问题的，但是你必须使用原生js，另外dataset浏览器兼容性不好
+![浏览器兼容]
+上例中如果不通过button1设置data属性，直接通过button2读取dom中原有data属性，会
+
+
+
+
+[浏览器兼容]: http://7xuyc3.com1.z0.glb.clouddn.com/dataset%E5%85%BC%E5%AE%B9.png

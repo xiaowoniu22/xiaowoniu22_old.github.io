@@ -1,12 +1,19 @@
 ---
 layout: post
-title:  "h5项目的从0到1"
-date:   2016-10-24 14:08:07 +0800
+title:  "应对浏览器不支持flash插件而做的探索"
+date:   2016-11-18 14:08:07 +0800
 categories: jekyll update
 tags: [h5]
 ---
-我做的h5项目的从0到1  
-1、
+	写这篇博客的原因是看到了[Firefox将逐步减少Adobe Flash的使用]这篇文章，而我们的项目中因为历史遗留问题或者是兼容问题依然有些功能使用了flash。  
+	首先，列举一下常用的通过flash使用的功能：  
+	1、复制
+	2、上传
+	3、预览
+	4、游戏
+	那么，随着浏览器对flash支持的减弱，这些功能该怎么实现呢？对于依然需要兼容IE8的需求该如何处理？
+	
+[Firefox将逐步减少Adobe Flash的使用]: http://mozilla.com.cn/forum.php?mod=viewthread&tid=366945&highlight=flash
 
 
 
