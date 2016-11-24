@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "animate怎样支持background-color"
-date:   2016-05-31 14:08:07 +0800
+date:   2016-05-03 14:08:07 +0800
 categories: jekyll update
 tags: [canvas]
 ---
