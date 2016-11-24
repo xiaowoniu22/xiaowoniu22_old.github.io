@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "data-属性的获取方式探讨"
-date:   2016-05-27 11:12:07 +0800
+date:   2016-05-28 11:12:07 +0800
 categories: jekyll update
 ---
 	最近在使用data-*方法时遇到一些问题。    
 	data-*属性是html5中的自定义属性，如果想通过js获取或设置自定义data属性，可以通过dataset对象。
-{% hightlight ruby %}
+{% highlight ruby %}
 <!doctype html>
 <html>
 <head>
@@ -28,7 +28,7 @@ $(document).ready(function(){
 <div data-gree="0123456"></div>
 </body>
 </html>
-{% endhightlight %}
+{% endhighlight %}
 因为dataset的自定义特性值必须为String类型，赋予其他类型时会发生隐式类型转换，不便于暂存对象、数组等数据。
 这样是没有问题的，但是你必须使用原生js，另外dataset浏览器兼容性不好
 ![浏览器兼容]
