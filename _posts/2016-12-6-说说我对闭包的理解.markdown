@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "javascript面向对象精要读书笔记"
+date:   2016-12-06 14:08:07 +0800
+categories: jekyll update
+tags: [闭包]
+---
+说说我对闭包的理解   
+	1、闭包的本质就是函数执行。通过函数执行将变量“包裹起来”成为函数内的局部变量。   
+	2、闭包的副作用：内存占用（从内存角度分析闭包single page web application一书）  
+	3、柯里化：[函数式编程mostly-adequate-guide]详细讲解   
+
+
+
+
+
+[函数式编程mostly-adequate-guide]: https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/conten
+
+https://yuzmb.github.io/2016/10/29/%E7%90%86%E8%A7%A3JavaScript---%E9%97%AD%E5%8C%85/
+http://dongss.cn/posts/3.html#%E9%97%AD%E5%8C%85-closure
+https://gist.github.com/jcouyang/b56a830cd55bd230049f

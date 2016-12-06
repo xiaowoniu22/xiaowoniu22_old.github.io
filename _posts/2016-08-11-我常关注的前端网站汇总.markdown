@@ -13,6 +13,7 @@ tags: [前端网站汇总]
 5、[javascript中文网]（电子书分区包含丰富的前端电子书）  
 6、[慕课网]（视频）  
 7、[three.js]  
+8、[函数式编程mostly-adequate-guide中文译本]（I like this book）
 
 [前端网址导航]: http://www.daqianduan.com/nav
 [淘宝前端团队]: http://taobaofed.org/
@@ -21,5 +22,6 @@ tags: [前端网站汇总]
 [javascript中文网]:http://www.javascriptcn.com/thread-2.html
 [慕课网]:http://www.imooc.com/
 [three.js]: http://threejs.org/
+[函数式编程mostly-adequate-guide中文译本]: https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/
 
 
