@@ -86,24 +86,24 @@ tags: [模块化]
        	  var dialog = require('./dialog').alertDialog;
 	  {% endhighlight %}
 	  
-	      直接通过require方法引用文件，返回文件的exports对象，这样就可以使用模块暴露出来的公用方法或变量。  
-	  但是，CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用
-	  于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览
-	  器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD和CMD 解决方案。  
-	  2、AMD(Asynchronous Module Definition)  
-	  顾名思义，异步模块定义。
-	  AMD的代表是RequireJS，通过define(id?, dependencies?, factory)来定义模块，require([dependencies], function(){})来调用模块，
-	  使用提前异步加载依赖模块的方式，模块加载完毕后执行回调函数，这里要好好理解JS的异步机制，不可按同步顺序执行的思维去理解，多个文件异步并行加载，
-	  哪个先执行完不是你按照加载顺序可预料到的，而是等所有依赖执行完毕，最后一并回调结果。  
-	  3、CMD
-	  CMD的代表是SeaJS，与RequireJS定义和加载模块的方式略有不同，同样可以通过define(id?, dependencies?, factory)定义模块，但是SeaJS
-	  是采用的就近依赖的方式来加载模块，一般不在dependencies里依赖模块，而是统一写法：define(function(require, exports, module){})，
-	  在factory里就近加载依赖模块，由seajs.use([dependencies],function(mod,[mod]){})来使用模块；本质上也是异步的加载模块，只是和
-	  RequireJS相比加载和执行的时机不一样罢了。  
-	  4、AMD和CMD的区别  
-	  相比来说，Seajs和Requirejs都是很不错的前端模块化组织方案，各有千秋；Requirejs要等到所有前置依赖加载并执行完毕，再回调主要的代码逻辑，
-	  如果非要说有所欠缺，就得在前置依赖那里做优化了，但大致上是很流畅的；Seajs只是将依赖模块预先加载并不执行，在需要时就近使用，这时就可能也
-	  许会出现延迟的现象。
+	  直接通过require方法引用文件，返回文件的exports对象，这样就可以使用模块暴露出来的公用方法或变量。  
+  但是，CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用
+  于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览
+  器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD和CMD 解决方案。  
+  2、AMD(Asynchronous Module Definition)  
+  顾名思义，异步模块定义。
+  AMD的代表是RequireJS，通过define(id?, dependencies?, factory)来定义模块，require([dependencies], function(){})来调用模块，
+  使用提前异步加载依赖模块的方式，模块加载完毕后执行回调函数，这里要好好理解JS的异步机制，不可按同步顺序执行的思维去理解，多个文件异步并行加载，
+  哪个先执行完不是你按照加载顺序可预料到的，而是等所有依赖执行完毕，最后一并回调结果。  
+  3、CMD
+  CMD的代表是SeaJS，与RequireJS定义和加载模块的方式略有不同，同样可以通过define(id?, dependencies?, factory)定义模块，但是SeaJS
+  是采用的就近依赖的方式来加载模块，一般不在dependencies里依赖模块，而是统一写法：define(function(require, exports, module){})，
+  在factory里就近加载依赖模块，由seajs.use([dependencies],function(mod,[mod]){})来使用模块；本质上也是异步的加载模块，只是和
+  RequireJS相比加载和执行的时机不一样罢了。  
+  4、AMD和CMD的区别  
+  相比来说，Seajs和Requirejs都是很不错的前端模块化组织方案，各有千秋；Requirejs要等到所有前置依赖加载并执行完毕，再回调主要的代码逻辑，
+  如果非要说有所欠缺，就得在前置依赖那里做优化了，但大致上是很流畅的；Seajs只是将依赖模块预先加载并不执行，在需要时就近使用，这时就可能也
+  许会出现延迟的现象。
 	  
 	  
 	  
