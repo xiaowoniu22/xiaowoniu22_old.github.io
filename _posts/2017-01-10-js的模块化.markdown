@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "js模块化"
+date:   2017-01-10 14:08:07 +0800
+categories: jekyll update
+tags: [闭包]
+---
+我也来说说js的模块化
+	秉承哲学中认识问题的逻辑思维过程，我从“是什么”，“为什么”，“怎么样（怎么用）”总结了一下js模块化开发。  
+	一、是什么  
+	谈论一件事物时，要先搞清楚它是什么。  
+	1、定义  
+	Javascript本身不是一种模块化编程语言，应该说是在ES6之前没有模块功能。  
+	模块是实现特定功能的一种方法。简单来说，定义一个函数就是一个模块。像这样：  
+	{% highlight ruby %}
+	function alertMessage(){
+		alert("这是一条提示");
+	}
+	{% endhighlight %} 
+	但是，这样的模块污染了全局变量，所以我们可以这样：
+	{% highlight ruby %}
+	var alertDialog = {
+		message：“这是一条提示”，
+		alertMessage: function(){
+			alert(this.message);
+		}
+	};
+	{% endhighlight %} 
+	但是，这样你又可以通过
+	{% highlight ruby %}
+	alertDialog.message = "这不是一条提示"；
+	{% endhighlight %} 
+	将模块的内部属性修改，这不是我们愿意看到的。所以，有了如下方式：
+	{% highlight ruby %}
+	var alertDialog = (function(){
+
+　　　　var message = “这是一条提示”;
+
+　　　　var alertMessage(){
+		alert("这是一条提示");
+	   };
+
+　　　　return {
+　　　　　　alertMessage : alertMessage
+　　　　};
+
+　　})();
+   {% endhighlight %}
+   如此这般，私有成员就不会暴露出来了。 
+   这些都可以称为模块。
+   2、性质  
+   模块应该具有独立性，如果要在模块内部使用全局变量，需要作为参数传入。
+   {% highlight ruby %}
+   var alertDialog = (function ($) {
+
+　　　　//...
+
+　　})(jQuery);
+   {% endhighlight %}
+   这就引出了模块的依赖性。
+   二、为什么  
+   既然知道了什么是模块，那么我们为什么要使用模块呢？  
+   使用模块可以将项目功能分离，便于维护，方便复用，以及上文说到的避免污染全局变量。  
+   三、怎么用  
+   
+   
+   
+
+
+
+
+[函数式编程mostly-adequate-guide]: https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/conten
+
+https://jdc.jd.com/archives/204
+https://segmentfault.com/a/1190000004873947
+https://zhuanlan.zhihu.com/p/22890374
+http://famanoder.com/bokes/58484c12712c723c0f316dae
+http://www.ruanyifeng.com/blog/2012/11/require_js.html
+http://lishaopeng.com/2016/02/05/js-module/
+http://fex.baidu.com/blog/2014/03/fis-module/#comments
+
+http://caibaojian.com/module-definition.html按需加载
