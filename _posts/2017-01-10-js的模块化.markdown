@@ -73,7 +73,7 @@ tags: [模块化]
       终于说到了重点：
       1、CommonJS规范  
       CommonJS是服务器端模块的规范，Node.js采用了这个规范。
- 	  {% highlight ruby %}
+ 	  {% highlight ruby linenos %}
  	  //dialog.js
       	function alertDialog(){
       		this.alertMessage = function(){
@@ -110,7 +110,7 @@ tags: [模块化]
    四、ES6的模块化
    在ES6中一个模块看起来就和一个普通的脚本文件一样，除了以下两个区别：
         1、ES6 的模块自动开启严格模式，即使你没有写 'use strict'；
-       	2、你可以在模块中使用 import 和 export。  
+       	2、你可以在模块中使用 import 和 export。
 	{% highlight ruby %}
 		//dialog.js
 		export function alertDialog(){
