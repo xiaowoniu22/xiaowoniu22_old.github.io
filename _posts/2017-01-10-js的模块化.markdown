@@ -114,23 +114,39 @@ tags: [模块化]
         1、ES6 的模块自动开启严格模式，即使你没有写 'use strict'；
        	2、你可以在模块中使用 import 和 export。
 	{% highlight ruby %}
-          	export function alertDialog(){
-				alert("这是一条提示");
-    		}
+		//dialog.js
+		export function alertDialog(){
+			alert("这是一条提示");
+		}
 	{% endhighlight %}
-   五、模块化和组件化
+
+	{% highlight ruby %}
+		import {alertDialog} from dialog.js
+  	{% endhighlight %}
+   五、模块化工具应用
+   目前常用的模块化工具除了上文提到的sea.js和require.js,就是browserify和webpack了。
+   现在我们来说说它们的不同：
+   sea.js和require.js是在线编译模块方案，browserify和webpack是预编译模块方案。
+
    六、参考资料
    http://famanoder.com/bokes/5867ebf04aee37201fb4d1cb
+   https://jdc.jd.com/archives/204
+   https://segmentfault.com/a/1190000004873947
+   https://zhuanlan.zhihu.com/p/22890374
+   http://famanoder.com/bokes/58484c12712c723c0f316dae
+   http://www.ruanyifeng.com/blog/2012/11/require_js.html
+   http://lishaopeng.com/2016/02/05/js-module/
+   http://fex.baidu.com/blog/2014/03/fis-module/#comments
+   http://caibaojian.com/module-definition.html
 
-
+   
 [浅谈模块化加载的实现原理]: http://caibaojian.com/module-definition.html
 
-https://jdc.jd.com/archives/204
-https://segmentfault.com/a/1190000004873947
-https://zhuanlan.zhihu.com/p/22890374
-http://famanoder.com/bokes/58484c12712c723c0f316dae
-http://www.ruanyifeng.com/blog/2012/11/require_js.html
-http://lishaopeng.com/2016/02/05/js-module/
-http://fex.baidu.com/blog/2014/03/fis-module/#comments
 
-http://caibaojian.com/module-definition.html按需加载
+
+
+
+
+
+
+
