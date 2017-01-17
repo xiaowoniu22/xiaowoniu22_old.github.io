@@ -29,8 +29,10 @@ tags: [模块化]
 	但是，这样你又可以通过
 	{% highlight ruby %}
 	alertDialog.message = "这不是一条提示"；
-	{% endhighlight %} 
+	{% endhighlight %}
+
 	将模块的内部属性修改，这不是我们愿意看到的。所以，有了如下方式：
+
 	{% highlight ruby %}
 	var alertDialog = (function(){
 
@@ -104,11 +106,11 @@ tags: [模块化]
 	  4、AMD和CMD的区别
 	  相比来说，Seajs和Requirejs都是很不错的前端模块化组织方案，各有千秋；Requirejs要等到所有前置依赖加载并执行完毕，再回调主要的代码逻辑，
 	  如果非要说有所欠缺，就得在前置依赖那里做优化了，但大致上是很流畅的；Seajs只是将依赖模块预先加载并不执行，在需要时就近使用，这时就可能也
-	  许会出现延迟的现象。    
+	  许会出现延迟的现象。
    四、ES6的模块化
    在ES6中一个模块看起来就和一个普通的脚本文件一样，除了以下两个区别：
         1、ES6 的模块自动开启严格模式，即使你没有写 'use strict'；
-       	2、你可以在模块中使用 import 和 export。
+       	2、你可以在模块中使用 import 和 export。  
 	{% highlight ruby %}
 		//dialog.js
 		export function alertDialog(){
