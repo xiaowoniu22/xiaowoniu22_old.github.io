@@ -19,8 +19,61 @@ tags: [闭包]
     2. 保护命名空间，避免污染全局变量；
     3. 缓存变量；
 	三、怎么用
+	四、闭包在for循环中的应用
+	for循环中存在如下问题：
+	{% highlight ruby %}
+    	var helpText = [
+              {'id': 'email', 'help': 'Your e-mail address'},
+              {'id': 'name', 'help': 'Your full name'},
+              {'id': 'age', 'help': 'Your age (you must be over 16)'}
+            ];
 
-	四、弊端
+          for (var i = 0; i < helpText.length; i++) {
+            var item = helpText[i];
+            document.getElementById(item.id).onfocus = function(){
+				document.getElementById('help').innerHTML = item.help;
+            };
+          }
+	{% endhighlight %}
+	https://jsfiddle.net/xiaowoniu/7chL2vfg/
+
+
+	{% highlight ruby %}
+	var helpText = [
+          {'id': 'email', 'help': 'Your e-mail address'},
+          {'id': 'name', 'help': 'Your full name'},
+          {'id': 'age', 'help': 'Your age (you must be over 16)'}
+        ];
+
+      for (var i = 0; i < helpText.length; i++) {
+        var item = helpText[i];
+        document.getElementById(item.id).onfocus =function (item){
+      			return function() {
+        			document.getElementById('help').innerHTML = item.help;
+      			};
+        }(item);
+      }
+	{% endhighlight %}
+	同理for循环中的setTimeout
+	{% highlight ruby %}
+		var helpText = [
+                  {'id': 'email', 'help': 'Your e-mail address'},
+                  {'id': 'name', 'help': 'Your full name'},
+                  {'id': 'age', 'help': 'Your age (you must be over 16)'}
+		];
+
+	  for (var i = 0; i < helpText.length; i++) {
+          var item = helpText[i];
+          setTimeout(function (item,i){
+      				return function() {
+      					document.getElementsByTagName('input')[i].value = item.help;
+      				};
+      		}(item,i),0)
+	  }
+	{% endhighlight %}
+
+	这里顺带提一下setTimeout,setTimeout的机制是从任务队列结束的时候开始计时的，如果前面有进程没有结束，那么它就等到它结束再开始计时。在这里，任务队列就是它自己所在的循环。循环结束setTimeout才开始计时，所以无论如何,setTimeout里面的i都是最后一次循环的i。
+	五、弊端
 	1、内存泄漏
       由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题。
 
