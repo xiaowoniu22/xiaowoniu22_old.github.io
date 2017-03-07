@@ -6,8 +6,8 @@ categories: jekyll update
 tags: [读书笔记]
 ---
 编写高质量代码
-改善javascript程序的188个建议：
-![封面]
+改善javascript程序的188个建议：    
+![封面]    
 1、警惕Unicode乱码  
 考虑到代码的安全性，我们应该尽量使用基本字符进行编码  
 2、正确辨析js语法中的词、句和段  
@@ -214,4 +214,4 @@ tags: [读书笔记]
 
 
 
-[封面]：http://7xuyc3.com1.z0.glb.clouddn.com/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%A3%E7%A0%81.png
+[封面]:http://7xuyc3.com1.z0.glb.clouddn.com/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%A3%E7%A0%81.png
