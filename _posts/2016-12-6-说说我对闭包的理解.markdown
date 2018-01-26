@@ -6,7 +6,7 @@ categories: jekyll update
 tags: [闭包]
 ---
 说说我对闭包的理解
-	一、什么是闭包
+	一、什么是闭包  
 	从两个角度来说明闭包的定义：
 	1、从内存角度来说，闭包是阻止垃圾回收器将变量从内存中移除的方法，使得在创建变量的执行环境的外面能够访问到该变量。闭包因保存函数而被创建。
 	2、从函数的角度来说，闭包就是能够在函数外部操作函数内部变量的函数。
@@ -34,7 +34,7 @@ tags: [闭包]
 				document.getElementById('help').innerHTML = item.help;
             };
           }
-	{% endhighlight %}  
+	{% endhighlight %}
 
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
 
