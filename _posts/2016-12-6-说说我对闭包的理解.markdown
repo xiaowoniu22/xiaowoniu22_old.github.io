@@ -34,7 +34,8 @@ tags: [闭包]
 				document.getElementById('help').innerHTML = item.help;
             };
           }
-	{% endhighlight %}
+	{% endhighlight %}  
+
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
 
 
