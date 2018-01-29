@@ -52,7 +52,7 @@ layout: default
     {% assign tag_name = page.tags[0] %}
     <li>{{page.tags[0]}}</li>
     <li>{{page.url}}</li>
-    <li>{{site.tags}}</li>
+    <li>{{site.tags}}12345</li>
     {% for post in site.tags[tag_name] limit:4 %}
 
       {% if post.url == page.url %}
