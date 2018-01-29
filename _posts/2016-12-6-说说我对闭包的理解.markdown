@@ -20,8 +20,9 @@ tags: [闭包]
     3. 缓存变量；          
 	三、怎么用    
 	四、闭包在for循环中的应用    
-	for循环中存在如下问题：    
-	{% highlight ruby linenos %}
+	for循环中存在如下问题：
+	
+	```js
       var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
           {'id': 'name', 'help': 'Your full name'},
@@ -34,7 +35,7 @@ tags: [闭包]
             document.getElementById('help').innerHTML = item.help;
         };
       }
-	{% endhighlight %}
+	```
 
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
 
