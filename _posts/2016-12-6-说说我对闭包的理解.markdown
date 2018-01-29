@@ -56,7 +56,11 @@ tags: [闭包]
       }
 	{% endhighlight %}
 	
+	
+	
 	同理for循环中的setTimeout
+	
+	
 	
 	{% highlight ruby linenos %}
 		var helpText = [
@@ -74,6 +78,8 @@ tags: [闭包]
           }(item,i),0)
 	  }
 	{% endhighlight %}
+
+
 
 
 	这里顺带提一下setTimeout,setTimeout的机制是从任务队列结束的时候开始计时的，如果前面有进程没有结束，那么它就等到它结束再开始计时。在这里，任务队列就是它自己所在的循环。循环结束setTimeout才开始计时，所以无论如何,setTimeout里面的i都是最后一次循环的i。
