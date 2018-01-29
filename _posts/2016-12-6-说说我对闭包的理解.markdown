@@ -2,7 +2,7 @@
 layout: post
 title:  "说说我对闭包的理解"
 date:   2016-12-06 14:08:07 +0800
-categories: jekyll update
+categories: js
 tags: [闭包]
 ---
 说说我对闭包的理解            
