@@ -22,7 +22,7 @@ tags: [闭包]
 	四、闭包在for循环中的应用    
 	for循环中存在如下问题：
 
-	```js
+
       var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
           {'id': 'name', 'help': 'Your full name'},
@@ -35,12 +35,12 @@ tags: [闭包]
             document.getElementById('help').innerHTML = item.help;
         };
       }
-	```
+
 
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
 
 
-	```js
+
 	var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
           {'id': 'name', 'help': 'Your full name'},
@@ -55,30 +55,35 @@ tags: [闭包]
             };
         }(item);
       }
-	```
+
 	
 	
 	
 	同理for循环中的setTimeout
 	
 	
-	
-	```js
-		var helpText = [
-          {'id': 'email', 'help': 'Your e-mail address'},
-          {'id': 'name', 'help': 'Your full name'},
-          {'id': 'age', 'help': 'Your age (you must be over 16)'}
-		];
 
-	  for (var i = 0; i < helpText.length; i++) {
-          var item = helpText[i];
-          setTimeout(function (item,i){
-            return function() {
-                document.getElementsByTagName('input')[i].value = item.help;
-            };
-          }(item,i),0)
-	  }
-	```
+
+    var helpText = [
+      {'id': 'email', 'help': 'Your e-mail address'},
+      {'id': 'name', 'help': 'Your full name'},
+      {'id': 'age', 'help': 'Your age (you must be over 16)'}
+    ];
+
+    for (var i = 0; i < helpText.length; i++) {
+      var item = helpText[i];
+      setTimeout(function (item,i){
+        return function() {
+            document.getElementsByTagName('input')[i].value = item.help;
+        };
+      }(item,i),0)
+    }
+
+
+
+
+
+
 
 
 
