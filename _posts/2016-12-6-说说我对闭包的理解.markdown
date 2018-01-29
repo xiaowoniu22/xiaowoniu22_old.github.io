@@ -55,7 +55,9 @@ tags: [闭包]
         }(item);
       }
 	{% endhighlight %}
+	
 	同理for循环中的setTimeout
+	
 	{% highlight ruby %}
 		var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
