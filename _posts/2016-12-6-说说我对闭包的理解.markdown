@@ -21,7 +21,7 @@ tags: [闭包]
 	三、怎么用    
 	四、闭包在for循环中的应用    
 	for循环中存在如下问题：
-	
+
 	```js
       var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
@@ -40,7 +40,7 @@ tags: [闭包]
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
 
 
-	{% highlight ruby linenos %}
+	```js
 	var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
           {'id': 'name', 'help': 'Your full name'},
@@ -55,7 +55,7 @@ tags: [闭包]
             };
         }(item);
       }
-	{% endhighlight %}
+	```
 	
 	
 	
@@ -63,7 +63,7 @@ tags: [闭包]
 	
 	
 	
-	{% highlight ruby linenos %}
+	```js
 		var helpText = [
           {'id': 'email', 'help': 'Your e-mail address'},
           {'id': 'name', 'help': 'Your full name'},
@@ -78,7 +78,7 @@ tags: [闭包]
             };
           }(item,i),0)
 	  }
-	{% endhighlight %}
+	```
 
 
 
