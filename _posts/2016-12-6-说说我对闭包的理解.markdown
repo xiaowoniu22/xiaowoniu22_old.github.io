@@ -6,11 +6,11 @@ categories: jekyll update
 tags: [闭包]
 ---
 说说我对闭包的理解
-	一、什么是闭包
-	从两个角度来说明闭包的定义：
-	1、从内存角度来说，闭包是阻止垃圾回收器将变量从内存中移除的方法，使得在创建变量的执行环境的外面能够访问到该变量。闭包因保存函数而被创建。  
+	一、什么是闭包  
+	从两个角度来说明闭包的定义：  
+	1、从内存角度来说，闭包是阻止垃圾回收器将变量从内存中移除的方法，使得在创建变量的执行环境的外面能够访问到该变量。闭包因保存函数而被创建。
 	2、从函数的角度来说，闭包就是能够在函数外部操作函数内部变量的函数。
-	1、本质就是返回结果是函数或者包含函数的函数，
+	1、本质就是返回结果是函数或者包含函数的函数，  
 	2、闭包的副作用：内存占用（从内存角度分析闭包single page web application一书）
 	javascript实现了自动自动释放内存的机制，当代码不再需要时，就从电脑的内存中把它移除。
 	3、柯里化：[函数式编程mostly-adequate-guide]详细讲解
@@ -21,19 +21,19 @@ tags: [闭包]
 	三、怎么用
 	四、闭包在for循环中的应用
 	for循环中存在如下问题：
-	{% highlight ruby %}  
-    	var helpText = [
-              {'id': 'email', 'help': 'Your e-mail address'},
-              {'id': 'name', 'help': 'Your full name'},
-              {'id': 'age', 'help': 'Your age (you must be over 16)'}
-            ];
+	{% highlight ruby %}
+      var helpText = [
+          {'id': 'email', 'help': 'Your e-mail address'},
+          {'id': 'name', 'help': 'Your full name'},
+          {'id': 'age', 'help': 'Your age (you must be over 16)'}
+      ];
 
-          for (var i = 0; i < helpText.length; i++) {
-            var item = helpText[i];
-            document.getElementById(item.id).onfocus = function(){
-				document.getElementById('help').innerHTML = item.help;
-            };
-          }
+      for (var i = 0; i < helpText.length; i++) {
+        var item = helpText[i];
+        document.getElementById(item.id).onfocus = function(){
+            document.getElementById('help').innerHTML = item.help;
+        };
+      }
 	{% endhighlight %}
 
 	https://jsfiddle.net/xiaowoniu/7chL2vfg/
@@ -72,6 +72,7 @@ tags: [闭包]
           }(item,i),0)
 	  }
 	{% endhighlight %}
+
 
 	这里顺带提一下setTimeout,setTimeout的机制是从任务队列结束的时候开始计时的，如果前面有进程没有结束，那么它就等到它结束再开始计时。在这里，任务队列就是它自己所在的循环。循环结束setTimeout才开始计时，所以无论如何,setTimeout里面的i都是最后一次循环的i。
 	五、弊端
