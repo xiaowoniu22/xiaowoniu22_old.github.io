@@ -6,7 +6,7 @@ url: /
 
 # Set to '' in case of hosting on `http://<your-github-name>.github.io`
 baseurl: https://xiaowoniu22.github.io
-title:  Tracy Guo'blog
+title:  Echo Guo'blog
 email: guoxiaoting949@163.com
 
 # Markdown enabled, however don't use more than one paragraph (enforced by `>`)
@@ -21,7 +21,7 @@ image:            /public/img/nap.jpg
 color:            '#A85641'
 
 author:
-  name:           'Tracy Guo'
+  name:           'Echo Guo'
 
   # Setting social media usernames will add icons at the bottom of the sidebar
   github:         xiaowoniu22
@@ -34,7 +34,7 @@ author:
 
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:          |
-   Hello! I'm Tracy Guo.
+   Hello! I'm Echo Guo.
 
 kramdown:
   math_engine: mathjax
